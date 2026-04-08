@@ -1,9 +1,20 @@
 services:
   api:
     build: ./api
-    container_name: docker-demo-nodemon-c1
+    container_name: docker-demo-api-c1
     ports:
       - '4000:4000'
     volumes:
       - ./api:/app
       - /app/node_modules
+  
+  client:
+    build: ./client
+    container_name: docker-demo-client-c1
+    ports:
+      - '5173:5173'
+    volumes:
+      - ./client:/app
+      - /app/node_modules
+    stdin_open: true
+    tty: true

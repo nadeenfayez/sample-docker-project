@@ -1,4 +1,12 @@
 {
+  "name": "sample-docker-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon -L app.js"
+  },
+  "author": "Nadeen Fayez",
   "dependencies": {
     "cors": "^2.8.6",
     "express": "^5.2.1"

@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "dev": "nodemon -L app.js"
+    "dev": "nodemon -L app.js",
+    "seed": "node scripts/seed.js"
   },
   "author": "Nadeen Fayez",
   "dependencies": {

@@ -10,11 +10,14 @@ type Blog = {
   description: string
 }
 
+const API = import.meta.env.VITE_API_URL;
+
+
 function App() {
   const [blogs, setBlogs] = useState<Blog[]>([])
 
   useEffect(() => {
-    fetch("http://localhost:4000/api/v1/blogs")
+    fetch(`${API}/api/v1/blogs`)
       .then(res => res.json())
       .then(data => setBlogs(data.blogs))
   }, [])

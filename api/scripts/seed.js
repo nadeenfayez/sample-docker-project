@@ -4,7 +4,7 @@ const Blog = require("../DB/models/blog");
 
 const seed = async () => {
     try {
-        await mongoose.connect("mongodb://mongo:27017/blogs-website");
+        await mongoose.connect(process.env.MONGO_URI);
 
         console.log("Connected to DB.");
 

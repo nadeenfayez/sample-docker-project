@@ -5,7 +5,7 @@ mongoose.connection.on("connected", () => console.log("MongoDB connected success
 mongoose.connection.on("error", (err) => console.error("MongoDB connection error:", err));
 
 const connectDB = async () => {
-    await mongoose.connect("mongodb://mongo:27017/blogs-website");
+    await mongoose.connect(process.env.MONGO_URI);
 };
 
 

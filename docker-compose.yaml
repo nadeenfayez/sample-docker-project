@@ -4,6 +4,8 @@ services:
     container_name: docker-demo-api-c1
     ports:
       - '4000:4000'
+    environment:
+      - MONGO_URI=${MONGO_URI}
     volumes:
       - ./api:/app
       - api_node_modules:/app/node_modules
@@ -26,6 +28,8 @@ services:
     container_name: docker-demo-mongo-c1
     ports:
       - '27018:27017'
+    environment:
+      - VITE_API_URL=${VITE_API_URL}
     volumes:
       - mongo-data:/data/db
 

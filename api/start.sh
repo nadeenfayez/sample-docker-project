@@ -7,4 +7,4 @@ echo "Starting app..."
 npm run seed
 
 # Start the server
-npm run dev
+npm run prod

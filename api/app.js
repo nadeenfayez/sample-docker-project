@@ -14,10 +14,19 @@ app.use(loggerMiddleware);
 
 connectDB();
 
+
 // Health check
 app.get("/", (req, res) => {
-    res.send("OK");
+    res.send("Docker Demo API is running.");
 });
+
+app.get("/health", (req, res) => {
+    res.status(200).json({
+        status: "UP",
+        timestamp: new Date().toISOString()
+    });
+});
+
 
 app.use("/api/v1/blogs", blogsRouter);
 

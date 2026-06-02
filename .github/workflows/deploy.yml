@@ -13,6 +13,16 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: ./api/package-lock.json
+
+      - name: Setup npm version
+        run: npm install -g npm@11.6.2
+
       - name: Install API dependencies
         working-directory: ./api
         run: npm ci

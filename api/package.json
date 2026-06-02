@@ -4,14 +4,19 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "dev": "nodemon -L app.js",
-    "prod": "node app.js",
-    "seed": "node scripts/seed.js"
+    "dev": "nodemon -L server.js",
+    "prod": "node server.js",
+    "seed": "node scripts/seed.js",
+    "test": "jest --runInBand"
   },
   "author": "Nadeen Fayez",
   "dependencies": {
     "cors": "^2.8.6",
     "express": "^5.2.1",
     "mongoose": "^9.4.1"
+  },
+  "devDependencies": {
+    "jest": "^30.4.2",
+    "supertest": "^7.2.2"
   }
 }
